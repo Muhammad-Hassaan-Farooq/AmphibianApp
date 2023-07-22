@@ -1,16 +1,15 @@
 package com.example.frogapi.Data
 
 
-import android.text.Editable.Factory
-import androidx.lifecycle.ViewModel
-import com.example.frogapi.Frog
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.frogapi.Frog
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
@@ -23,7 +22,7 @@ sealed interface FrogUIState {
     object Error : FrogUIState
     object Loading : FrogUIState
 }
-class FrogViewModel ():ViewModel(){
+class FrogViewModel :ViewModel(){
     var frogUIState:FrogUIState by mutableStateOf(FrogUIState.Loading)
         private set
 
